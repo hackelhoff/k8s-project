@@ -1,4 +1,5 @@
 sudo: required
+
 services:
   - docker
 
@@ -7,3 +8,14 @@ before_install:
 
 script:
   - docker run -e CI=true test-web-image npm run test
+
+# aws deployment config
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "<REGION>"
+#   app: "<EBS_APP_NAME>"
+#   env: "<EBS_APP_ENV_NAME>"
+#   bucket_name: "<S3_BUCKET_NAME>"
+#   bucket_path: "<EBS_APP_NAME>"
+#   on:
+#     branch: master
