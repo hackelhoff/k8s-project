@@ -9,4 +9,5 @@ RUN npm run build
 # second from statement indicates new block
 # nginx starts automatically
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
