@@ -10,14 +10,14 @@ script:
   - docker run -e CI=true test-web-image npm run test
 
 # aws deployment config
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "<REGION>"
-#   app: "<EBS_APP_NAME>"
-#   env: "<EBS_APP_ENV_NAME>"
-#   bucket_name: "<S3_BUCKET_NAME>"
-#   bucket_path: "<EBS_APP_NAME>"
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "k8s-project"
+  env: "K8sProject-env"
+  bucket_name: "elasticbeanstalk-us-east-2-870553296052"
+  bucket_path: "k8s-project"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
